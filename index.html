@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiBot | AI Logistics Support</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Logi<span class="accent">Bot</span></div>
+        <div class="nav-links">
+            <a href="#challenge">The Challenge</a>
+            <a href="#solution">Solution</a>
+            <a href="#demo">Live Demo</a>
+            <a href="#architecture">Tech Stack</a>
+            <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Next-Gen Support System</div>
+                <h1>The Future of <br> <span class="text-gradient">Logistics Intelligence</span></h1>
+                <p>Reduce support costs by 60% with an AI agent that knows your shipments inside out.</p>
+                <div class="cta-group">
+                    <a href="#demo" class="btn-primary">See LogiBot in Action</a>
+                    <a href="#architecture" class="btn-secondary">How it Works</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Abstract 3D/Tech Visual Placeholder -->
+                <div class="floating-card">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Tracking Order #8821...</span>
+                </div>
+                <div class="floating-card secondary">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Delivery Confirmed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge Section -->
+    <section id="challenge" class="section">
+        <div class="container">
+            <h2 class="section-title">The Operational <span class="accent">Bottleneck</span></h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon-box"><i class="fa-solid fa-phone-slash"></i></div>
+                    <h3>Overloaded Lines</h3>
+                    <p>70% of inbound calls are repetitive "Where is my order?" (WISMO) queries that drain resources.</p>
+                    <div class="stat">70% WISMO</div>
+                </div>
+                <div class="card">
+                    <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                    <h3>Slow Responses</h3>
+                    <p>Manual tracking lookups take 3-5 minutes per ticket, frustrating customers and drivers.</p>
+                    <div class="stat">5min/Ticket</div>
+                </div>
+                <div class="card">
+                    <div class="icon-box"><i class="fa-solid fa-language"></i></div>
+                    <h3>Language Gaps</h3>
+                    <p>Cross-border logistics face communication barriers with international drivers and clients.</p>
+                    <div class="stat">Lost Context</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section id="solution" class="section dark-bg">
+        <div class="container">
+            <div class="split-layout">
+                <div class="content-side">
+                    <h2 class="section-title">Meet <span class="text-gradient">LogiBot</span></h2>
+                    <p class="lead">A 24/7 Intelligent Agent integrated directly with your Transport Management System (TMS).</p>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>
+                                <strong>Instant Tracking</strong>
+                                <p>Real-time location & status from Order IDs instantly.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-file-invoice"></i>
+                            <div>
+                                <strong>Document Retrieval</strong>
+                                <p>Fetches PODs, Invoices, and Customs Docs on demand.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <div>
+                                <strong>Multilingual Core</strong>
+                                <p>Fluent in 50+ languages to bridge the gap.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <!-- Placeholder for Interactive Graphic -->
+                    <div class="tech-circle">
+                        <div class="center-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div class="orbit-item item-1"><i class="fa-solid fa-truck"></i></div>
+                        <div class="orbit-item item-2"><i class="fa-solid fa-database"></i></div>
+                        <div class="orbit-item item-3"><i class="fa-solid fa-users"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="section">
+        <div class="container">
+            <h2 class="section-title center">Experience <span class="accent">Real-Time</span> Support</h2>
+            <div class="chat-interface-wrapper">
+                <div class="chat-window">
+                    <div class="chat-header">
+                        <div class="bot-info">
+                            <div class="status-dot"></div>
+                            <span>LogiBot Support</span>
+                        </div>
+                    </div>
+                    <div class="chat-body" id="chat-body">
+                        <div class="message bot">
+                            <p>Hello! I'm LogiBot. I can help you track shipments, find documents, or reschedule deliveries. How can I assist you today?</p>
+                        </div>
+                        <!-- Messages will be injected here by JS -->
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="user-input" placeholder="Type 'Where is order #1234'...">
+                        <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section id="architecture" class="section dark-bg">
+        <div class="container">
+            <h2 class="section-title center">Engineered for <span class="text-gradient">Scale</span></h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                    graph TD
+                    User([User / Customer]) -->|Message| Interface[WhatsApp / Web]
+                    Interface -->|Webhook| Backend[Node.js Core]
+                    
+                    subgraph AI["AI Logic Layer"]
+                        Backend -->|Prompt| LLM[GPT-4 / Gemini]
+                        LLM -->|Context| VectorDB[(Vector Knowledge)]
+                    end
+                    
+                    subgraph Data["Enterprise Data"]
+                        Backend -->|Status Check| TMS[TMS / ERP]
+                        Backend -->|Fetch Docs| S3[Document Store]
+                    end
+
+                    TMS -->|Status: Delivered| Backend
+                    LLM -->|Natural Response| Backend
+                    Backend -->|Reply| Interface
+                    
+                    classDef node fill:#112240,stroke:#64ffda,stroke-width:2px,color:#ccd6f6;
+                    classDef subgraph fill:#0a192f,stroke:#233554,stroke-width:2px,color:#8892b0;
+                    
+                    class User,Interface,Backend,LLM,VectorDB,TMS,S3 node;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & ROI Section -->
+    <section id="impact" class="section">
+        <div class="container">
+            <h2 class="section-title center">Business <span class="accent">Impact</span></h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number text-gradient">< 2s</div>
+                    <div class="stat-label">Response Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number text-gradient">24/7</div>
+                    <div class="stat-label">Availability</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number text-gradient">60%</div>
+                    <div class="stat-label">Cost Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number text-gradient">10x</div>
+                    <div class="stat-label">Scalability</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Ready to modernize your logistics support?</h3>
+                <p>Let's start with a 2-week Proof of Concept.</p>
+                <a href="#" class="btn-primary large">Schedule a Demo</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LogiBot Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
