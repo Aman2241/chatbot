@@ -671,3 +671,63 @@ footer {
         order: 1;
     }
 }
+
+/* Resources Section */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resource-card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(136, 146, 176, 0.1);
+    text-align: center;
+    transition: var(--transition);
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.resource-card .icon-box {
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.resource-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.resource-card p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.btn-link {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: var(--font-heading);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-link i {
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover .btn-link i {
+    transform: translateX(5px);
+}
