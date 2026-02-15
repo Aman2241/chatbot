@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogiBot | AI Logistics Support</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Mermaid.js -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -66,7 +70,8 @@
                 <div class="card">
                     <div class="icon-box"><i class="fa-solid fa-phone-slash"></i></div>
                     <h3>Overloaded Lines</h3>
-                    <p>70% of inbound calls are repetitive "Where is my order?" (WISMO) queries that drain resources.</p>
+                    <p>70% of inbound calls are repetitive "Where is my order?" (WISMO) queries that drain resources.
+                    </p>
                     <div class="stat">70% WISMO</div>
                 </div>
                 <div class="card">
@@ -91,7 +96,8 @@
             <div class="split-layout">
                 <div class="content-side">
                     <h2 class="section-title">Meet <span class="text-gradient">LogiBot</span></h2>
-                    <p class="lead">A 24/7 Intelligent Agent integrated directly with your Transport Management System (TMS).</p>
+                    <p class="lead">A 24/7 Intelligent Agent integrated directly with your Transport Management System
+                        (TMS).</p>
                     <ul class="feature-list">
                         <li>
                             <i class="fa-solid fa-bolt"></i>
@@ -133,23 +139,43 @@
     <section id="demo" class="section">
         <div class="container">
             <h2 class="section-title center">Experience <span class="accent">Real-Time</span> Support</h2>
-            <div class="chat-interface-wrapper">
+            <div class="demo-grid">
+                <!-- Chat Interface -->
                 <div class="chat-window">
                     <div class="chat-header">
                         <div class="bot-info">
                             <div class="status-dot"></div>
                             <span>LogiBot Support</span>
                         </div>
+                        <div class="header-monitor">Status: Online</div>
                     </div>
                     <div class="chat-body" id="chat-body">
                         <div class="message bot">
-                            <p>Hello! I'm LogiBot. I can help you track shipments, find documents, or reschedule deliveries. How can I assist you today?</p>
+                            <p>Hello! I'm LogiBot. I can help you track shipments, find documents, or reschedule
+                                deliveries.</p>
                         </div>
-                        <!-- Messages will be injected here by JS -->
+                    </div>
+                    <!-- Quick Replies -->
+                    <div class="quick-replies">
+                        <button class="chip" onclick="fillInput('Where is order #8821?')">Track Order</button>
+                        <button class="chip" onclick="fillInput('I want to reschedule delivery')">Reschedule</button>
+                        <button class="chip" onclick="fillInput('Report a damaged package')">Report Issue</button>
                     </div>
                     <div class="chat-input-area">
-                        <input type="text" id="user-input" placeholder="Type 'Where is order #1234'...">
+                        <input type="text" id="user-input" placeholder="Type a message...">
                         <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+                <!-- Backend Logic/Brain Monitor -->
+                <div class="logic-monitor">
+                    <div class="monitor-header">
+                        <i class="fa-solid fa-code"></i> AI Processing Log
+                    </div>
+                    <div class="monitor-body" id="logic-logs">
+                        <div class="log-entry system">[SYSTEM] LogiBot v1.0 initialized</div>
+                        <div class="log-entry system">[SYSTEM] Connected to TMS Database</div>
+                        <div class="log-entry system">[SYSTEM] Waiting for user input...</div>
                     </div>
                 </div>
             </div>
@@ -165,24 +191,24 @@
                     graph TD
                     User([User / Customer]) -->|Message| Interface[WhatsApp / Web]
                     Interface -->|Webhook| Backend[Node.js Core]
-                    
+
                     subgraph AI["AI Logic Layer"]
-                        Backend -->|Prompt| LLM[GPT-4 / Gemini]
-                        LLM -->|Context| VectorDB[(Vector Knowledge)]
+                    Backend -->|Prompt| LLM[GPT-4 / Gemini]
+                    LLM -->|Context| VectorDB[(Vector Knowledge)]
                     end
-                    
+
                     subgraph Data["Enterprise Data"]
-                        Backend -->|Status Check| TMS[TMS / ERP]
-                        Backend -->|Fetch Docs| S3[Document Store]
+                    Backend -->|Status Check| TMS[TMS / ERP]
+                    Backend -->|Fetch Docs| S3[Document Store]
                     end
 
                     TMS -->|Status: Delivered| Backend
                     LLM -->|Natural Response| Backend
                     Backend -->|Reply| Interface
-                    
+
                     classDef node fill:#112240,stroke:#64ffda,stroke-width:2px,color:#ccd6f6;
                     classDef subgraph fill:#0a192f,stroke:#233554,stroke-width:2px,color:#8892b0;
-                    
+
                     class User,Interface,Backend,LLM,VectorDB,TMS,S3 node;
                 </div>
             </div>
@@ -195,23 +221,24 @@
             <h2 class="section-title center">Business <span class="accent">Impact</span></h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number text-gradient">< 2s</div>
-                    <div class="stat-label">Response Time</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number text-gradient">24/7</div>
-                    <div class="stat-label">Availability</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number text-gradient">60%</div>
-                    <div class="stat-label">Cost Reduction</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number text-gradient">10x</div>
-                    <div class="stat-label">Scalability</div>
+                    <div class="stat-number text-gradient">
+                        < 2s</div>
+                            <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number text-gradient">24/7</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number text-gradient">60%</div>
+                        <div class="stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number text-gradient">10x</div>
+                        <div class="stat-label">Scalability</div>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Footer -->
@@ -230,4 +257,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
