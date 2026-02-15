@@ -1,18 +1,4 @@
-// Initialize Mermaid
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-        darkMode: true,
-        background: '#0a192f',
-        primaryColor: '#112240',
-        primaryTextColor: '#ccd6f6',
-        primaryBorderColor: '#64ffda',
-        lineColor: '#8892b0',
-        secondaryColor: '#112240',
-        tertiaryColor: '#112240'
-    }
-});
+// Mermaid initialized in index.html via ESM
 
 // Expose function for inline onclick
 window.fillInput = function (text) {

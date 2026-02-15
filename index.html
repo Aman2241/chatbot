@@ -17,7 +17,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Mermaid.js -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <!-- Mermaid.js (ESM) -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                darkMode: true,
+                background: '#0a192f',
+                primaryColor: '#112240',
+                primaryTextColor: '#ccd6f6',
+                primaryBorderColor: '#64ffda',
+                lineColor: '#8892b0',
+                secondaryColor: '#112240',
+                tertiaryColor: '#112240'
+            }
+        });
+    </script>
 
     <link rel="stylesheet" href="style.css">
 </head>
