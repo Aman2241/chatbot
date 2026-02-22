@@ -209,12 +209,12 @@
                     User([User / Customer]) -->|Message| Interface[WhatsApp / Web]
                     Interface -->|Webhook| Backend[Node.js Core]
 
-                    subgraph AI["AI Logic Layer"]
+                    subgraph AI_Logic["AI Logic Layer"]
                     Backend -->|Prompt| LLM[GPT-4 / Gemini]
                     LLM -->|Context| VectorDB[(Vector Knowledge)]
                     end
 
-                    subgraph Data["Enterprise Data"]
+                    subgraph Enterprise_Data["Enterprise Data"]
                     Backend -->|Status Check| TMS[TMS / ERP]
                     Backend -->|Fetch Docs| S3[Document Store]
                     end
@@ -223,10 +223,8 @@
                     LLM -->|Natural Response| Backend
                     Backend -->|Reply| Interface
 
-                    classDef node fill:#112240,stroke:#64ffda,stroke-width:2px,color:#ccd6f6;
-                    classDef subgraph fill:#0a192f,stroke:#233554,stroke-width:2px,color:#8892b0;
-
-                    class User,Interface,Backend,LLM,VectorDB,TMS,S3 node;
+                    classDef defaultNode fill:#112240,stroke:#64ffda,stroke-width:2px,color:#ccd6f6;
+                    class User,Interface,Backend,LLM,VectorDB,TMS,S3 defaultNode;
                 </div>
             </div>
         </div>
